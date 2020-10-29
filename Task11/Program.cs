@@ -56,7 +56,19 @@ namespace Task11
                     t.PrintInfo();
                 Console.WriteLine();
             }
-                
+
+            List<Dog> dogs1 = new List<Dog>()
+            {
+                new Dog("bull terrier", 2, "George "),
+                new Dog("bulldog", 3, "Damien"),
+                new Dog("Damien ", 4, "Benson"),
+                new Dog("bulldog", 1, "Waite"),
+                new Dog("bull terrier", 3, "bull terrier"),
+                new Dog("mastiff", 5, "Benson")
+            };
+
+            var max = dogs1.Max(n => n.Age);
+            Console.WriteLine("max age: "+max);
         }
     }
 }
