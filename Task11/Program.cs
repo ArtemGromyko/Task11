@@ -68,7 +68,17 @@ namespace Task11
             };
 
             var max = dogs1.Max(n => n.Age);
-            Console.WriteLine("max age: "+max);
+            Console.WriteLine("\nmax age: "+max);
+
+            var sw = dogs1.SkipWhile(n => n.Age < 4);
+            Console.WriteLine("\nskip while age < 4");
+            foreach (var s in sw)
+                s.PrintInfo();
+
+            var except = dogs1.Except(dogs);
+            Console.WriteLine("\nexcept: ");
+            foreach (var e in except)
+                e.PrintInfo();
         }
     }
 }

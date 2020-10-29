@@ -18,5 +18,21 @@ namespace Task11
         {
             Console.WriteLine("species: " + Species + " age: " + Age);
         }
+        public override bool Equals(object obj)
+        {
+            if (!(obj is Animal))
+                return false;
+            Animal a = (Animal)obj;
+            if (this.Age != a.Age)
+                return false;
+            else if (this.Species != a.Species)
+                return false;
+            else
+                return true;
+        }
+        public override int GetHashCode()
+        {
+            return Species.GetHashCode();
+        }
     }
 }
